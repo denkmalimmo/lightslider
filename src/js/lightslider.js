@@ -395,6 +395,14 @@
                             $slide.parent().css('padding-right', (settings.vThumbWidth + settings.galleryMargin) + 'px');
                         }
                         $cSouter.find('.lSPager').css(property, pagerWidth + 'px');
+                        $cSouter.find('.lSPager').toggleClass( 'lSpg', false );
+						$cSouter.find('.lSPager').toggleClass( 'lSGallery', true );				
+                    } else {
+						$cSouter.find('.lSPager').toggleClass( 'lSpg', true );
+						$cSouter.find('.lSPager').toggleClass( 'lSGallery', false );
+						$cSouter.find('.lSPager').removeAttr( 'style' );
+						var gMargin = (settings.vertical) ? 'margin-left' : 'margin-top';
+						$cSouter.find('.lSPager').css(gMargin, settings.galleryMargin + 'px');
                     }
                     var $pager = $cSouter.find('.lSPager').find('li');
                     $pager.first().addClass('active');
